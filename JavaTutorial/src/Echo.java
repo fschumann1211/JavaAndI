@@ -8,7 +8,7 @@ import java.util.*;
  * @author frank
  *
  */
-public class Kapitel10 {
+public class Echo {
 
 	/**
 	 * @param args
