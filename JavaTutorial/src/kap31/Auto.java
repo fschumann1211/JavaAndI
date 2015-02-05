@@ -5,7 +5,7 @@ package kap31;
 
 /**
  * @author frank
- * @version 0.31.2
+ * @version 0.31.15
  *
  */
 
@@ -15,9 +15,9 @@ public class Auto {
 	double gallonen;
 	
 	/**
-	 * @param startTacho
-	 * @param endTacho
-	 * @param galls
+	 * @param startTacho Anfangsstand Tacho
+	 * @param endTacho Endstand Tacho
+	 * @param galls Verbrauchte Gallonen
 	 */
 	public Auto(double startTacho, double endTacho, double galls) {
 		startMeilen = startTacho;
