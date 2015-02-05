@@ -5,7 +5,7 @@ package kap32;
 
 /**
  * @author frank
- * @version 0.32.14
+ * @version 0.32.17
  *
  */
 public class Bankkonto {
@@ -52,5 +52,12 @@ public class Bankkonto {
 			fee = 0;
 		}
 		kontoStand = kontoStand - fee - betrag;
+	}
+	
+	/**
+	 * 
+	 */
+	void anzeigen(){
+		System.out.println(kontoNummer + " " + kontoInhaber + " " + kontoStand);
 	}
 }
