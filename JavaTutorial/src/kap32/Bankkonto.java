@@ -5,7 +5,7 @@ package kap32;
 
 /**
  * @author frank
- * @version 0.32.13
+ * @version 0.32.14
  *
  */
 public class Bankkonto {
@@ -34,8 +34,23 @@ public class Bankkonto {
 		return kontoStand;
 	}
 	
+	/**
+	 * @param betrag
+	 */
 	void einzahlen(int betrag){
 		kontoStand = kontoStand + betrag;
 	}
-
+	
+	/**
+	 * @param betrag
+	 */
+	void auszahlen(int betrag){
+		int fee;
+		if (kontoStand < 100000){
+			fee = 15;
+		} else {
+			fee = 0;
+		}
+		kontoStand = kontoStand - fee - betrag;
+	}
 }
