@@ -25,7 +25,7 @@ public class Auto {
 		gallonen = galls;
 	}
 	/**
-	 * @return
+	 * @return double
 	 */
 	double berechneMPG(){
 		return ((endMeilen-startMeilen)/gallonen);
