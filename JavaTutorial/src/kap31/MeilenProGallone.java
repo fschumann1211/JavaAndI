@@ -6,7 +6,7 @@ import java.util.*;
 
 /**
  * @author frank
- * @version 0.31.4
+ * @version 0.31.16
  *
  */
 public class MeilenProGallone {
@@ -30,7 +30,7 @@ public class MeilenProGallone {
 		Auto auto = new Auto(startMeilen, endMeilen, gallonen);
 		
 		System.out.println("Meilen pro Gallone: " + auto.berechneMPG());
-
+		scan.close();
 	}
 
 }
