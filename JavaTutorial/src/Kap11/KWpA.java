@@ -15,7 +15,6 @@ public class KWpA {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		double kwPreis, kwJahr;
 		Scanner scan = new Scanner(System.in);
 		
