@@ -28,12 +28,12 @@ public class Bankkonto {
 	}
 	
 	//   Methoden
-	/**
-	 * @return
-	 */
 	private void inkrZaehler(){
 		zaehler++;
 	}
+	/**
+	 * @return int
+	 */
 	public int getKontostand(){
 		return kontoStand;
 	}
