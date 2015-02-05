@@ -6,7 +6,7 @@ import java.util.*;
 
 /**
  * @author frank
- * @version 0.18.2
+ * @version 0.18.8
  *
  */
 public class AddUpInteger {
@@ -17,17 +17,26 @@ public class AddUpInteger {
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
-		int value, sum = 0;
+		int value, count = 0, sum = 0;
+		String suffix = null;
 		
 		System.out.println("Enter 1st Integer (0 to quit):");
 		value = scan.nextInt();
 		
 		while (value!=0){
 			sum = sum + value;
-			System.out.println("Next Integer (0 to quit):");
+			count++;
+			if (((count+1) % 10 > 3) || (count+1) == 11 || (count+1) == 12 || (count+1) == 13 ){
+				suffix = new String("th");
+			} else {
+				if ((count+1)%10 == 1) suffix = new String("st");
+				if ((count+1)%10 == 2) suffix = new String("nd");
+				if ((count+1)%10 == 3) suffix = new String("rd");
+			}
+			System.out.println((count+1) + suffix + " Integer (0 to quit):");
 			value = scan.nextInt();
 		}
-		System.out.println("Sum of all Integers: " + sum);
+		System.out.println("Sum of all " + count + " Integers: " + sum);
 		scan.close();
 	}
 
