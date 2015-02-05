@@ -5,7 +5,7 @@ package kap32;
 
 /**
  * @author frank
- * @version 0.32.9
+ * @version 0.32.11
  *
  */
 public class Bankkonto {
@@ -27,5 +27,11 @@ public class Bankkonto {
 	}
 	
 	//   Methoden
+	/**
+	 * @return
+	 */
+	int getKontostand(){
+		return kontoStand;
+	}
 
 }
