@@ -18,7 +18,7 @@ public class AddUpInteger {
 		
 		Scanner scan = new Scanner(System.in);
 		int value, count = 0, sum = 0;
-		String suffix = null;
+		String suffix = new String("");
 		
 		System.out.println("Enter 1st Integer (0 to quit):");
 		value = scan.nextInt();
@@ -27,11 +27,11 @@ public class AddUpInteger {
 			sum = sum + value;
 			count++;
 			if (((count+1) % 10 > 3) || (count+1) == 11 || (count+1) == 12 || (count+1) == 13 ){
-				suffix = new String("th");
+				suffix = "th";
 			} else {
-				if ((count+1)%10 == 1) suffix = new String("st");
-				if ((count+1)%10 == 2) suffix = new String("nd");
-				if ((count+1)%10 == 3) suffix = new String("rd");
+				if ((count+1)%10 == 1) suffix = "st";
+				if ((count+1)%10 == 2) suffix = "nd";
+				if ((count+1)%10 == 3) suffix = "rd";
 			}
 			System.out.println((count+1) + suffix + " Integer (0 to quit):");
 			value = scan.nextInt();
