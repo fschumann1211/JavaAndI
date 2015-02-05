@@ -6,7 +6,7 @@ import java.util.*;
 
 /**
  * @author frank
- * @version 0.19.16
+ * @version 0.19.19
  *
  */
 public class Quadratwurzel {
@@ -23,11 +23,14 @@ public class Quadratwurzel {
 		
 		System.out.println("Geben Sie einen Wert an:");
 		n = scan.nextDouble();
-		
-		while (Math.abs(n/(estim*estim)-1) > FASTNULL){
-			estim = n/(estim*2)+estim/2;
+		if ( n >= 0.0){
+			while (Math.abs(n/(estim*estim)-1) > FASTNULL){
+				estim = n/(estim*2)+estim/2;
+			}
+			System.out.println("Die Quadratwurzel von " + n + " beträgt: " + estim);
+		} else {
+			System.out.println("Nur positive Zahlen!");
 		}
-		System.out.println("Die Quadratwurzel von " + n + " beträgt: " + estim);
 		scan.close();
 
 	}
