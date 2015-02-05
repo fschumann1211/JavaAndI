@@ -5,7 +5,7 @@ package kap32;
 
 /**
  * @author frank
- * @version 0.32.6
+ * @version 0.32.9
  *
  */
 public class Bankkonto {
@@ -15,6 +15,11 @@ public class Bankkonto {
 	int kontoStand;
 	
 	//   Konstruktoren
+	/**
+	 * @param kontoNummer
+	 * @param kontoInhaber
+	 * @param kontoStand
+	 */
 	Bankkonto (String kontoNummer, String kontoInhaber, int kontoStand){
 		this.kontoNummer = kontoNummer;
 		this.kontoInhaber = kontoInhaber;
