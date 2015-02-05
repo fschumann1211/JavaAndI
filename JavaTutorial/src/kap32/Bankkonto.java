@@ -5,7 +5,7 @@ package kap32;
 
 /**
  * @author frank
- * @version 0.33.3
+ * @version 0.33.8
  *
  */
 public class Bankkonto {
@@ -13,6 +13,7 @@ public class Bankkonto {
 	private String kontoNummer;
 	private String kontoInhaber;
 	private int kontoStand;
+	private int zaehler = 0;
 	
 	//   Konstruktoren
 	/**
@@ -30,6 +31,9 @@ public class Bankkonto {
 	/**
 	 * @return
 	 */
+	private void inkrZaehler(){
+		zaehler++;
+	}
 	int getKontostand(){
 		return kontoStand;
 	}
@@ -38,6 +42,7 @@ public class Bankkonto {
 	 * @param betrag
 	 */
 	void einzahlen(int betrag){
+		inkrZaehler();
 		kontoStand = kontoStand + betrag;
 	}
 	
@@ -45,6 +50,7 @@ public class Bankkonto {
 	 * @param betrag
 	 */
 	void auszahlen(int betrag){
+		inkrZaehler();
 		int fee;
 		if (kontoStand < 100000){
 			fee = 15;
