@@ -5,14 +5,15 @@ package kap32;
 
 /**
  * @author frank
- * @version 0.32.18
+ * @version 0.33.14
  *
  */
 public class Bankkonto {
 	//   Felder
-	String kontoNummer;
-	String kontoInhaber;
-	int kontoStand;
+	private String kontoNummer;
+	private String kontoInhaber;
+	private int kontoStand;
+	private int zaehler = 0;
 	
 	//   Konstruktoren
 	/**
@@ -20,7 +21,7 @@ public class Bankkonto {
 	 * @param kontoInhaber
 	 * @param kontoStand
 	 */
-	Bankkonto (String kontoNummer, String kontoInhaber, int kontoStand){
+	public Bankkonto (String kontoNummer, String kontoInhaber, int kontoStand){
 		this.kontoNummer = kontoNummer;
 		this.kontoInhaber = kontoInhaber;
 		this.kontoStand = kontoStand;
@@ -30,21 +31,26 @@ public class Bankkonto {
 	/**
 	 * @return
 	 */
-	int getKontostand(){
+	private void inkrZaehler(){
+		zaehler++;
+	}
+	public int getKontostand(){
 		return kontoStand;
 	}
 	
 	/**
 	 * @param betrag
 	 */
-	void einzahlen(int betrag){
+	public void einzahlen(int betrag){
+		inkrZaehler();
 		kontoStand = kontoStand + betrag;
 	}
 	
 	/**
 	 * @param betrag
 	 */
-	void auszahlen(int betrag){
+	public void auszahlen(int betrag){
+		inkrZaehler();
 		int fee;
 		if (kontoStand < 100000){
 			fee = 15;
@@ -57,7 +63,8 @@ public class Bankkonto {
 	/**
 	 * 
 	 */
-	void anzeigen(){
-		System.out.println(kontoNummer + "\t" + kontoInhaber + "\t" + kontoStand);
+	public void anzeigen(){
+		System.out.println(kontoNummer + "\t" + kontoInhaber + "\t" + 
+				kontoStand + "\t" + zaehler);
 	}
 }
