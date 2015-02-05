@@ -5,7 +5,7 @@ package kap32;
 
 /**
  * @author frank
- * @version 0.32.16
+ * @version 0.32.18
  *
  */
 public class BankkontoTester {
@@ -22,11 +22,10 @@ public class BankkontoTester {
 //		
 //		System.out.println(kto2.kontoNummer + " " + kto2.kontoInhaber +
 //				" " + kto2.getKontostand());
-		System.out.println(kto1.getKontostand());
+		kto1.anzeigen();
 		kto1.einzahlen(2000);
 		kto1.auszahlen(1500);
-		System.out.println(kto1.getKontostand());
-
+		kto1.anzeigen();
 	}
 
 }

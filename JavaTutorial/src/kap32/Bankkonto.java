@@ -5,7 +5,7 @@ package kap32;
 
 /**
  * @author frank
- * @version 0.32.17
+ * @version 0.32.18
  *
  */
 public class Bankkonto {
@@ -58,6 +58,6 @@ public class Bankkonto {
 	 * 
 	 */
 	void anzeigen(){
-		System.out.println(kontoNummer + " " + kontoInhaber + " " + kontoStand);
+		System.out.println(kontoNummer + "\t" + kontoInhaber + "\t" + kontoStand);
 	}
 }
