@@ -33,5 +33,9 @@ public class Bankkonto {
 	int getKontostand(){
 		return kontoStand;
 	}
+	
+	void einzahlen(int betrag){
+		kontoStand = kontoStand + betrag;
+	}
 
 }
