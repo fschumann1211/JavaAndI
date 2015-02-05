@@ -3,7 +3,7 @@
  */
 package Kap11;
 import java.util.*;
-import java.lang.Math;
+//import java.lang.Math;
 
 /**
  * @author frank
