@@ -5,7 +5,7 @@ package kap32;
 
 /**
  * @author frank
- * @version 0.32.11
+ * @version 0.32.13
  *
  */
 public class Bankkonto {
