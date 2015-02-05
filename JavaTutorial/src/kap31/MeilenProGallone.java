@@ -2,10 +2,11 @@
  * 
  */
 package kap31;
+import java.util.*;
 
 /**
  * @author frank
- * @version 0.31.3
+ * @version 0.31.4
  *
  */
 public class MeilenProGallone {
@@ -14,10 +15,21 @@ public class MeilenProGallone {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Auto auto = new Auto(32456, 32810, 10.6);
+		Scanner scan = new Scanner(System.in);
+		double startMeilen, endMeilen, gallonen;
 		
-		System.out.println(auto.berechneMPG());
+		System.out.println("Anfangsstand eingeben:");
+		startMeilen = scan.nextDouble();
+		
+		System.out.println("Endstand eingeben:");
+		endMeilen = scan.nextDouble();
+		
+		System.out.println("Gallonen eingeben:");
+		gallonen = scan.nextDouble();
+		
+		Auto auto = new Auto(startMeilen, endMeilen, gallonen);
+		
+		System.out.println("Meilen pro Gallone: " + auto.berechneMPG());
 
 	}
 
