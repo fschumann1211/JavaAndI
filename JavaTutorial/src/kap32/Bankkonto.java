@@ -5,14 +5,14 @@ package kap32;
 
 /**
  * @author frank
- * @version 0.32.18
+ * @version 0.33.3
  *
  */
 public class Bankkonto {
 	//   Felder
-	String kontoNummer;
-	String kontoInhaber;
-	int kontoStand;
+	private String kontoNummer;
+	private String kontoInhaber;
+	private int kontoStand;
 	
 	//   Konstruktoren
 	/**
