@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 
 /**
  * @author frank
- * @version 0.60.12
+ * @version 0.60.13
  *
  */
 public class TxtRpt extends JFrame implements ActionListener {
@@ -56,6 +56,8 @@ public class TxtRpt extends JFrame implements ActionListener {
 		add(outTxt);
 		
 		inTxt.addActionListener(this);
+		
+		outTxt.setEditable(false);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
