@@ -3,6 +3,7 @@
  */
 package test;
 
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,7 +13,7 @@ import javax.swing.JFrame;
 
 /**
  * @author frank
- * @version 0.57.13
+ * @version 0.57.14
  *
  */
 public class ButtonFrame extends JFrame implements ActionListener {
@@ -62,8 +63,8 @@ public class ButtonFrame extends JFrame implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
+		getContentPane().setBackground(Color.red);
+		repaint();
 	}
 
 }
