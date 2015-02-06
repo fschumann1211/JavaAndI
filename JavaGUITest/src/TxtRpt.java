@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 
 /**
  * @author frank
- * @version 0.60.10
+ * @version 0.60.11
  *
  */
 public class TxtRpt extends JFrame implements ActionListener {
@@ -31,6 +31,10 @@ public class TxtRpt extends JFrame implements ActionListener {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		TxtRpt frame = new TxtRpt("Text Wiederholer");
+		
+		frame.setSize(400, 100);
+		frame.setVisible(true);
 		// TODO Auto-generated method stub
 
 	}
