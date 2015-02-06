@@ -12,7 +12,7 @@ import javax.swing.JFrame;
 
 /**
  * @author frank
- * @version 0.59.7
+ * @version 0.59.13
  *
  */
 public class TwoBtns extends JFrame implements ActionListener {
@@ -93,7 +93,10 @@ public class TwoBtns extends JFrame implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		getContentPane().setBackground(Color.green);
+		if ( arg0.getActionCommand().equals("rot"))
+			getContentPane().setBackground(Color.red);
+		else
+			getContentPane().setBackground(Color.green);
 		repaint();
 	}
 
