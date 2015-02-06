@@ -1,3 +1,4 @@
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -69,6 +70,8 @@ public class TwoBtns extends JFrame implements ActionListener {
 
 	public TwoBtns(String title){
 		super (title);
+		
+		getContentPane().setLayout(new FlowLayout());
 		
 		redBtn = new JButton("Rot");
 		grnBtn = new JButton("Grün");
