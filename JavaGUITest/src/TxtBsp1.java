@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 /**
  * @author frank
  * @version 0.60.4
- *
+ * 
  */
 public class TxtBsp1 extends JFrame implements ActionListener {
 
@@ -21,20 +21,23 @@ public class TxtBsp1 extends JFrame implements ActionListener {
 	 */
 	private static final long serialVersionUID = 3303381175228576064L;
 	private JTextField text;
-	
-	public TxtBsp1(String title){
+
+	public TxtBsp1(String title) {
 		super(title);
-		
+
 		text = new JTextField(50);
 		getContentPane().setLayout(new FlowLayout());
-		
+
 		getContentPane().add(text);
-		
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
-	/* (non-Javadoc)
-	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
@@ -46,8 +49,10 @@ public class TxtBsp1 extends JFrame implements ActionListener {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		TxtBsp1 txtBsp = new TxtBsp1("Text Feld");
 
+		txtBsp.setSize(300, 100);
+		txtBsp.setVisible(true);
 	}
 
 	public JTextField getText() {
