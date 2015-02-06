@@ -12,21 +12,32 @@ import javax.swing.JTextField;
 
 /**
  * @author frank
- * @version 0.61.5
+ * @version 0.61.5b
  *
  */
 @SuppressWarnings("serial")
 public class ConvF extends JFrame implements ActionListener {
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ConvF frame = new ConvF("Temp Converter");
+		
+		frame.setSize(300, 100);
+		frame.setVisible(true);
+
+	}
 	private JLabel heading = new JLabel("Convert Fahrenheit to Celsius");
 	private JLabel inLabel = new JLabel("Fahrenheit:");
+	
 	private JLabel outLabel = new JLabel("Celsius");
-	
 	private JTextField inTxt = new JTextField(5);
+	
 	private JTextField outTxt = new JTextField(5);
-	
 	private int fahrTemp;
-	private int celsTemp;
 	
+	private int celsTemp;
+
 	public ConvF(String title){
 		super (title);
 		
@@ -38,6 +49,10 @@ public class ConvF extends JFrame implements ActionListener {
 		add(inTxt);
 		add(outLabel);
 		add(outTxt);
+		
+		getOutTxt().setEditable(false);
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
 	/* (non-Javadoc)
@@ -50,81 +65,10 @@ public class ConvF extends JFrame implements ActionListener {
 	}
 
 	/**
-	 * @param args
+	 * @return the celsTemp
 	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
-	/**
-	 * @return the heading
-	 */
-	public JLabel getHeading() {
-		return heading;
-	}
-
-	/**
-	 * @param heading the heading to set
-	 */
-	public void setHeading(JLabel heading) {
-		this.heading = heading;
-	}
-
-	/**
-	 * @return the inLabel
-	 */
-	public JLabel getInLabel() {
-		return inLabel;
-	}
-
-	/**
-	 * @param inLabel the inLabel to set
-	 */
-	public void setInLabel(JLabel inLabel) {
-		this.inLabel = inLabel;
-	}
-
-	/**
-	 * @return the outLabel
-	 */
-	public JLabel getOutLabel() {
-		return outLabel;
-	}
-
-	/**
-	 * @param outLabel the outLabel to set
-	 */
-	public void setOutLabel(JLabel outLabel) {
-		this.outLabel = outLabel;
-	}
-
-	/**
-	 * @return the inTxt
-	 */
-	public JTextField getInTxt() {
-		return inTxt;
-	}
-
-	/**
-	 * @param inTxt the inTxt to set
-	 */
-	public void setInTxt(JTextField inTxt) {
-		this.inTxt = inTxt;
-	}
-
-	/**
-	 * @return the outTxt
-	 */
-	public JTextField getOutTxt() {
-		return outTxt;
-	}
-
-	/**
-	 * @param outTxt the outTxt to set
-	 */
-	public void setOutTxt(JTextField outTxt) {
-		this.outTxt = outTxt;
+	public int getCelsTemp() {
+		return celsTemp;
 	}
 
 	/**
@@ -135,17 +79,38 @@ public class ConvF extends JFrame implements ActionListener {
 	}
 
 	/**
-	 * @param fahrTemp the fahrTemp to set
+	 * @return the heading
 	 */
-	public void setFahrTemp(int fahrTemp) {
-		this.fahrTemp = fahrTemp;
+	public JLabel getHeading() {
+		return heading;
 	}
 
 	/**
-	 * @return the celsTemp
+	 * @return the inLabel
 	 */
-	public int getCelsTemp() {
-		return celsTemp;
+	public JLabel getInLabel() {
+		return inLabel;
+	}
+
+	/**
+	 * @return the inTxt
+	 */
+	public JTextField getInTxt() {
+		return inTxt;
+	}
+
+	/**
+	 * @return the outLabel
+	 */
+	public JLabel getOutLabel() {
+		return outLabel;
+	}
+
+	/**
+	 * @return the outTxt
+	 */
+	public JTextField getOutTxt() {
+		return outTxt;
 	}
 
 	/**
@@ -153,6 +118,48 @@ public class ConvF extends JFrame implements ActionListener {
 	 */
 	public void setCelsTemp(int celsTemp) {
 		this.celsTemp = celsTemp;
+	}
+
+	/**
+	 * @param fahrTemp the fahrTemp to set
+	 */
+	public void setFahrTemp(int fahrTemp) {
+		this.fahrTemp = fahrTemp;
+	}
+
+	/**
+	 * @param heading the heading to set
+	 */
+	public void setHeading(JLabel heading) {
+		this.heading = heading;
+	}
+
+	/**
+	 * @param inLabel the inLabel to set
+	 */
+	public void setInLabel(JLabel inLabel) {
+		this.inLabel = inLabel;
+	}
+
+	/**
+	 * @param inTxt the inTxt to set
+	 */
+	public void setInTxt(JTextField inTxt) {
+		this.inTxt = inTxt;
+	}
+
+	/**
+	 * @param outLabel the outLabel to set
+	 */
+	public void setOutLabel(JLabel outLabel) {
+		this.outLabel = outLabel;
+	}
+
+	/**
+	 * @param outTxt the outTxt to set
+	 */
+	public void setOutTxt(JTextField outTxt) {
+		this.outTxt = outTxt;
 	}
 
 }
