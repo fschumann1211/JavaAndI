@@ -5,7 +5,7 @@ package warenhausDB;
 
 /**
  * @author frank
- * @version 0.53.9
+ * @version 0.53.10
  *
  */
 public class Spielwaren extends Waren implements Besteuerbar {
@@ -23,7 +23,7 @@ public class Spielwaren extends Waren implements Besteuerbar {
 	 */
 	@Override
 	public double berechneSteuer() {
-		return this.getPreis() + this.getPreis()*TAX;
+		return this.getPreis()*TAX;
 	}
 
 	/* (non-Javadoc)
