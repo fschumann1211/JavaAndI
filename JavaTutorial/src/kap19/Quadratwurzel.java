@@ -15,7 +15,6 @@ public class Quadratwurzel {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		final double FASTNULL = 1.0E-14;
 		Scanner scan = new Scanner(System.in);
 		double n;
