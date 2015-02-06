@@ -12,8 +12,11 @@ import javax.swing.*;
  * @version 0.56.11
  *
  */
-@SuppressWarnings("serial")
 public class MyFrame extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7527320593559786936L;
 	private JLabel label;
 	
 	public MyFrame(String title) {
