@@ -3,6 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
@@ -11,7 +12,7 @@ import javax.swing.JTextField;
 
 /**
  * @author frank
- * @version 0.60.4
+ * @version 0.60.6
  * 
  */
 public class TxtBsp1 extends JFrame implements ActionListener {
@@ -21,13 +22,18 @@ public class TxtBsp1 extends JFrame implements ActionListener {
 	 */
 	private static final long serialVersionUID = 3303381175228576064L;
 	private JTextField text;
+	private JLabel lbl;
 
 	public TxtBsp1(String title) {
 		super(title);
 
-		text = new JTextField(50);
+		text = new JTextField(15);
+		
+		lbl = new JLabel("Geben Sie Ihren Namen ein:");
+		
 		getContentPane().setLayout(new FlowLayout());
 
+		getContentPane().add(lbl);
 		getContentPane().add(text);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
