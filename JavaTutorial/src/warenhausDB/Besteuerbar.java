@@ -5,7 +5,7 @@ package warenhausDB;
 
 /**
  * @author frank
- * @version 0.53.8
+ * @version 0.53.13
  *
  */
 public interface Besteuerbar {

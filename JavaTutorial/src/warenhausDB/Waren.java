@@ -5,7 +5,7 @@ package warenhausDB;
 
 /**
  * @author frank
- * @version 0.53.7
+ * @version 0.53.13
  *
  */
 public abstract class Waren {
@@ -37,6 +37,20 @@ public abstract class Waren {
 	 */
 	public void setPreis(double preis) {
 		this.preis = preis;
+	}
+
+	/**
+	 * @return the beschreibung
+	 */
+	public String getBeschreibung() {
+		return beschreibung;
+	}
+
+	/**
+	 * @param beschreibung the beschreibung to set
+	 */
+	public void setBeschreibung(String beschreibung) {
+		this.beschreibung = beschreibung;
 	}
 
 }
