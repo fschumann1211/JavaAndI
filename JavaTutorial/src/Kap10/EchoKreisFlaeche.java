@@ -14,7 +14,6 @@ public class EchoKreisFlaeche {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
 		int radius;
 		double flaeche;
@@ -25,6 +24,7 @@ public class EchoKreisFlaeche {
 		
 		System.out.println("Die Fläche eines Kreises mit einem Radius von " +
 				radius + " beträgt " + flaeche);
+		scan.close();
 
 	}
 
