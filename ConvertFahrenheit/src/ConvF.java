@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 
 /**
  * @author frank
- * @version 0.61.5b
+ * @version 0.61.6
  *
  */
 @SuppressWarnings("serial")
@@ -60,8 +60,12 @@ public class ConvF extends JFrame implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-
+		String userIn = getInTxt().getText();
+		
+		setFahrTemp(Integer.parseInt(userIn));
+		setCelsTemp(convert(getFahrTemp()));
+		
+		getOutTxt().setText(String.valueOf(getCelsTemp()));
 	}
 
 	/**
