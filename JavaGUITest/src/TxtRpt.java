@@ -65,11 +65,14 @@ public class TxtRpt extends JFrame implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		String name = inTxt.getText();
-		outTxt.setText(name);
+		copyText();
 		repaint();
 	}
 
+	private void copyText() {
+		String name = inTxt.getText();
+		outTxt.setText(name);
+	}
 	/**
 	 * @return the inLabel
 	 */
