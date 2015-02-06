@@ -66,10 +66,15 @@ public class ConvF extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent arg0) {
 		String userIn = getInTxt().getText();
 
-		setFahrTemp(Integer.parseInt(userIn));
-		setCelsTemp(convert(getFahrTemp()));
-
-		getOutTxt().setText(String.valueOf(getCelsTemp()));
+		try {
+			setFahrTemp(Integer.parseInt(userIn));
+			setCelsTemp(convert(getFahrTemp()));
+	
+			getOutTxt().setText(String.valueOf(getCelsTemp()));
+		} catch (Exception ex) {
+			getOutTxt().setText("NoINT");
+		}
+		repaint();
 	}
 
 	/**
