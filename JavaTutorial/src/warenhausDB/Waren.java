@@ -8,7 +8,7 @@ package warenhausDB;
  * @version 0.53.13
  *
  */
-public abstract class Waren {
+public class Waren {
 	private String beschreibung;
 	private double preis;
 
