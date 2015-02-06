@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -71,10 +72,10 @@ public class TwoBtns extends JFrame implements ActionListener {
 	public TwoBtns(String title){
 		super (title);
 		
-		getContentPane().setLayout(new FlowLayout());
-		
 		redBtn = new JButton("Rot");
 		grnBtn = new JButton("Grün");
+		
+		getContentPane().setLayout(new FlowLayout());
 		
 		redBtn.addActionListener(this);
 		add(redBtn);
@@ -90,8 +91,8 @@ public class TwoBtns extends JFrame implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-
+		getContentPane().setBackground(Color.green);
+		repaint();
 	}
 
 }
