@@ -12,6 +12,7 @@ import javax.swing.*;
  * @version 0.56.11
  *
  */
+@SuppressWarnings("serial")
 public class MyFrame extends JFrame {
 	private JLabel label;
 	
