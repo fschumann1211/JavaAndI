@@ -4,16 +4,18 @@
 package test;
 
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
 /**
  * @author frank
- * @version 0.57.3
+ * @version 0.57.10
  *
  */
-public class ButtonFrame extends JFrame {
+public class ButtonFrame extends JFrame implements ActionListener {
 	/**
 	 * 
 	 */
@@ -50,6 +52,15 @@ public class ButtonFrame extends JFrame {
 	 */
 	public void setbChange(JButton bChange) {
 		this.bChange = bChange;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
