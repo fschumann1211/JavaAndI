@@ -12,7 +12,7 @@ import javax.swing.JFrame;
 
 /**
  * @author frank
- * @version 0.57.10
+ * @version 0.57.13
  *
  */
 public class ButtonFrame extends JFrame implements ActionListener {
@@ -25,10 +25,13 @@ public class ButtonFrame extends JFrame implements ActionListener {
 	public ButtonFrame(String title) {
 		
 		super(title);
-		setLayout(new FlowLayout());
+		getContentPane().setLayout(new FlowLayout());
 		
 		bChange = new JButton("Klick mich!");
-		add(bChange);
+		getContentPane().setLayout(new FlowLayout());
+		bChange.addActionListener(this);
+		
+		getContentPane().add(bChange);
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
