@@ -77,9 +77,11 @@ public class TwoBtns extends JFrame implements ActionListener {
 		
 		getContentPane().setLayout(new FlowLayout());
 		
+		redBtn.setActionCommand("rot");
 		redBtn.addActionListener(this);
 		add(redBtn);
 		
+		grnBtn.setActionCommand("gruen");
 		grnBtn.addActionListener(this);
 		add(grnBtn);
 		
