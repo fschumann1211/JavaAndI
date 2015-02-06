@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 
 /**
  * @author frank
- * @version 0.60.11
+ * @version 0.60.12
  *
  */
 public class TxtRpt extends JFrame implements ActionListener {
