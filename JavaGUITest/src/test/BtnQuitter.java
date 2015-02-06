@@ -29,7 +29,6 @@ public class BtnQuitter extends JFrame implements ActionListener{
 		
 		frame.setSize(200, 100);
 		frame.setVisible(true);
-		// TODO Auto-generated method stub
 
 	}
 	
@@ -53,8 +52,6 @@ public class BtnQuitter extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		System.exit(0);
-		// TODO Auto-generated method stub
-		
 	}
 
 }
