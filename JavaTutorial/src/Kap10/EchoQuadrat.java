@@ -13,7 +13,6 @@ public class EchoQuadrat {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
 		int zahl, quadrat;
 		
@@ -23,7 +22,7 @@ public class EchoQuadrat {
 		quadrat = zahl * zahl;
 		
 		System.out.println("Das Quadrat von " + zahl + " ist " + quadrat);
-
+		scan.close();
 	}
 
 }
