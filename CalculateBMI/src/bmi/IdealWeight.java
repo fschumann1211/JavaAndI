@@ -63,6 +63,12 @@ public class IdealWeight extends JFrame implements ActionListener {
 		 */
 		genderM = new JRadioButton("Male", true);
 		genderF = new JRadioButton("Female", false);
+		
+		genderM.setActionCommand("M");
+		genderM.addActionListener(this);
+		
+		genderF.setActionCommand("F");
+		genderF.addActionListener(this);
 
 		genderGroup = new ButtonGroup();
 		genderGroup.add(genderM);
@@ -84,6 +90,18 @@ public class IdealWeight extends JFrame implements ActionListener {
 		heightC = new JRadioButton("68 to 72 inches", false);
 		heightD = new JRadioButton("72 to 76 inches", false);
 		heightE = new JRadioButton("76 to 80 inches", false);
+		
+		heightA.setActionCommand("A");
+		heightA.addActionListener(this);
+		heightB.setActionCommand("B");
+		heightB.addActionListener(this);
+		heightC.setActionCommand("C");
+		heightC.addActionListener(this);
+		heightD.setActionCommand("D");
+		heightD.addActionListener(this);
+		heightE.setActionCommand("E");
+		heightE.addActionListener(this);
+		
 
 		heightGroup = new ButtonGroup();
 		heightBox = new Box(BoxLayout.Y_AXIS);
