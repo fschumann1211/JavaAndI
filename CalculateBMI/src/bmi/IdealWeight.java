@@ -3,6 +3,7 @@
  */
 package bmi;
 
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,10 +14,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 
 /**
  * @author frank
- * @version 0.63.5
+ * @version 0.63.6
  *
  */
 @SuppressWarnings("serial")
@@ -33,8 +35,14 @@ public class IdealWeight extends JFrame implements ActionListener {
 	private JRadioButton heightE;
 	private ButtonGroup heightGroup;
 	private JPanel heightPanel;
+	private JTextField resultText;
+	private JPanel resultPanel;
 
 	public IdealWeight(){
+		super();
+		getContentPane().setLayout(new FlowLayout());
+		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		/**
 		 * Gender Group
 		 */
@@ -79,6 +87,25 @@ public class IdealWeight extends JFrame implements ActionListener {
 		heightPanel.add(heightC);
 		heightPanel.add(heightD);
 		heightPanel.add(heightE);
+		
+		/**
+		 * result pane
+		 */
+		resultText = new JTextField(7);
+		resultText.setEditable(false);
+		
+		resultPanel = new JPanel();
+		resultPanel.setLayout(new BoxLayout(resultPanel, BoxLayout.Y_AXIS));
+		
+		resultPanel.add(new JLabel("Ideal Weight"));
+		resultPanel.add(resultText);
+		
+		/*
+		 * Add panels to content pane
+		 */
+		getContentPane().add(genderPanel);
+		getContentPane().add(heightPanel);
+		getContentPane().add(resultPanel);
 	}
 
 	/* (non-Javadoc)
@@ -94,6 +121,10 @@ public class IdealWeight extends JFrame implements ActionListener {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		IdealWeight frame = new IdealWeight();
+		
+		frame.setSize(300, 400);
+		frame.setVisible(true);
 
 	}
 
