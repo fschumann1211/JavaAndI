@@ -1,4 +1,4 @@
-package circle;
+package draw;
 
 import javax.swing.JApplet;
 
