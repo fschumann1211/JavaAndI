@@ -22,6 +22,7 @@ public class FreeFall {
 		
 		System.out.println("Geben Sie die Zeit in Sekunden an:");
 		z = scan.nextDouble();
+		scan.close();
 		
 		s= (G*z*z)/2;
 		
