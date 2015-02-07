@@ -11,7 +11,7 @@ import javax.swing.JTextField;
 
 /**
  * @author frank
- * @version 0.61.13
+ * @version 0.61.14
  *
  */
 @SuppressWarnings("serial")
@@ -52,6 +52,8 @@ public class FatCalc extends JFrame implements ActionListener {
 		add(outLabel);
 		add(outPer);
 		add(doCalc);
+		
+		doCalc.addActionListener(this);
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		// TODO Auto-generated constructor stub
