@@ -20,6 +20,7 @@ public class Echo {
 		
 		System.out.println("Geben Sie Daten ein: ");
 		inData = scan.nextLine();
+		scan.close();
 		
 		System.out.println("Sie haben eingegeben: " + inData);
 	}
