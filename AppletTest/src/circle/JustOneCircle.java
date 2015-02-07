@@ -10,7 +10,10 @@ public class JustOneCircle extends JApplet
 {
   final int radius = 25;
 
-  public void paint ( Graphics gr )
+  /* (non-Javadoc)
+ * @see java.awt.Container#paint(java.awt.Graphics)
+ */
+public void paint ( Graphics gr )
   { 
     gr.setColor( Color.white );
     gr.fillRect( 0, 0, 150, 150 );
