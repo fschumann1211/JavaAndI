@@ -7,11 +7,12 @@ import java.text.DecimalFormat;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
  * @author frank
- * @version 0.61.17
+ * @version 0.62.7
  * 
  */
 @SuppressWarnings("serial")
@@ -22,7 +23,8 @@ public class FatCalc extends JFrame implements ActionListener {
 	public static void main(String[] args) {
 		FatCalc frame = new FatCalc("Calories from Fat");
 
-		frame.setSize(300, 180);
+		frame.setSize(300, 225);
+		frame.setResizable(false);
 		frame.setVisible(true);
 	}
 	private JLabel heading = new JLabel("Get Percent Calories from Fat");
@@ -37,6 +39,12 @@ public class FatCalc extends JFrame implements ActionListener {
 	private double fatGrams;
 
 	private double percent;
+	
+	private JPanel headPanel = new JPanel();
+	private JPanel fatPanel  = new JPanel();
+	private JPanel calPanel  = new JPanel();
+	private JPanel perPanel  = new JPanel();
+	private JPanel btnPanel  = new JPanel();
 
 	public FatCalc(String title) throws HeadlessException {
 		super(title);
@@ -44,15 +52,21 @@ public class FatCalc extends JFrame implements ActionListener {
 		getContentPane().setLayout(new FlowLayout());
 		outPer.setEditable(false);
 
-		add(heading);
-		add(fatLabel);
-		add(fatTxt);
-		add(calLabel);
-		add(calTxt);
-		add(outLabel);
-		add(outPer);
-		add(doCalc);
+		headPanel.add(heading);
+		fatPanel.add(fatLabel);
+		fatPanel.add(fatTxt);
+		calPanel.add(calLabel);
+		calPanel.add(calTxt);
+		perPanel.add(outLabel);
+		perPanel.add(outPer);
+		btnPanel.add(doCalc);
 
+		add(headPanel);
+		add(fatPanel);
+		add(calPanel);
+		add(perPanel);
+		add(btnPanel);
+		
 		doCalc.addActionListener(this);
 
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
