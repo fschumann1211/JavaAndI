@@ -3,11 +3,11 @@
  */
 package bmi;
 
+import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
@@ -18,7 +18,7 @@ import javax.swing.JTextField;
 
 /**
  * @author frank
- * @version 0.63.6
+ * @version 0.63.7
  *
  */
 @SuppressWarnings("serial")
@@ -40,7 +40,7 @@ public class IdealWeight extends JFrame implements ActionListener {
 
 	public IdealWeight(){
 		super();
-		getContentPane().setLayout(new FlowLayout());
+//		getContentPane().setLayout(new FlowLayout());
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		/**
@@ -95,7 +95,7 @@ public class IdealWeight extends JFrame implements ActionListener {
 		resultText.setEditable(false);
 		
 		resultPanel = new JPanel();
-		resultPanel.setLayout(new BoxLayout(resultPanel, BoxLayout.Y_AXIS));
+//		resultPanel.setLayout(new BoxLayout(resultPanel, BoxLayout.Y_AXIS));
 		
 		resultPanel.add(new JLabel("Ideal Weight"));
 		resultPanel.add(resultText);
@@ -103,9 +103,10 @@ public class IdealWeight extends JFrame implements ActionListener {
 		/*
 		 * Add panels to content pane
 		 */
-		getContentPane().add(genderPanel);
-		getContentPane().add(heightPanel);
-		getContentPane().add(resultPanel);
+		getContentPane().setLayout(new BorderLayout());
+		getContentPane().add(genderPanel, BorderLayout.WEST);
+		getContentPane().add(heightPanel, BorderLayout.EAST);
+		getContentPane().add(resultPanel, BorderLayout.SOUTH);
 	}
 
 	/* (non-Javadoc)
@@ -123,7 +124,7 @@ public class IdealWeight extends JFrame implements ActionListener {
 	public static void main(String[] args) {
 		IdealWeight frame = new IdealWeight();
 		
-		frame.setSize(300, 400);
+		frame.setSize(300, 200);
 		frame.setVisible(true);
 
 	}
