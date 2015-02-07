@@ -8,17 +8,24 @@ import java.awt.*;
 @SuppressWarnings("serial")
 public class JustOneCircle extends JApplet
 {
-  final int radius = 25;
+  int radius;
 
   /* (non-Javadoc)
  * @see java.awt.Container#paint(java.awt.Graphics)
  */
 public void paint ( Graphics gr )
   { 
+	int width = getWidth();
+	int height = getHeight();
+	
+	if (width<height)
+		radius = 2*width/5;
+	else
+		radius = 2*height/5;
     gr.setColor( Color.white );
     gr.fillRect( 0, 0, 150, 150 );
     gr.setColor( Color.black );
 
-    gr.drawOval( (150/2 - radius), (150/2 - radius), radius*2, radius*2 );
+    gr.drawOval( (width/2 - radius), (height/2 - radius), radius*2, radius*2 );
    }
 }
