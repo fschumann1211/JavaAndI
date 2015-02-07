@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 
 /**
  * @author frank
- * @version 0.62.6
+ * @version 0.62.7
  * 
  */
 @SuppressWarnings("serial")
@@ -24,6 +24,7 @@ public class FatCalc extends JFrame implements ActionListener {
 		FatCalc frame = new FatCalc("Calories from Fat");
 
 		frame.setSize(300, 225);
+		frame.setResizable(false);
 		frame.setVisible(true);
 	}
 	private JLabel heading = new JLabel("Get Percent Calories from Fat");
