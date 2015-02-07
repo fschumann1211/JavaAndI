@@ -11,7 +11,7 @@ import javax.swing.JTextField;
 
 /**
  * @author frank
- * @version 0.61.14
+ * @version 0.61.15
  *
  */
 @SuppressWarnings("serial")
@@ -61,8 +61,13 @@ public class FatCalc extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-
+		setFatGrams(Double.parseDouble(getFatTxt().getText()));
+		setCalories(Double.parseDouble(getCalTxt().getText()));
+		
+		calcPercent();
+		
+		outPer.setText(String.valueOf(percent));
+		repaint();
 	}
 
 	/**
