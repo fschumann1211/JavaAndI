@@ -23,6 +23,7 @@ public class KWpA {
 		
 		System.out.println("Geben Sie den Verbrauch in KWh pro Jahr an: ");
 		kwJahr =scan.nextDouble();
+		scan.close();
 		
 		System.out.println("Jahreskosten: " + (kwPreis*kwJahr/100));
 
