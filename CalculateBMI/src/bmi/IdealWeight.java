@@ -6,6 +6,7 @@ package bmi;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -70,7 +71,7 @@ public class IdealWeight extends JFrame implements ActionListener {
 		btnGender[1].addActionListener(this);
 		
 		for (int i = 0; i < btnGender.length;i++){
-			if (btnGender[i].isEnabled())
+			if (btnGender[i].isSelected())
 				gender = btnGender[i].getActionCommand();
 		}
 
@@ -80,7 +81,7 @@ public class IdealWeight extends JFrame implements ActionListener {
 
 		genderBox = new Box(BoxLayout.Y_AXIS);
 
-		genderBox.add(new JLabel("Your btnGender"));
+		genderBox.add(new JLabel("Your Gender"));
 		genderBox.add(Box.createRigidArea(new Dimension(1, 8)));
 		genderBox.add(btnGender[0]);
 		genderBox.add(btnGender[1]);
@@ -96,7 +97,7 @@ public class IdealWeight extends JFrame implements ActionListener {
 		btnHeight[4] = new JRadioButton("76 to 80 inches", false);
 		
 		for (int i = 0; i < btnHeight.length; i++){
-			if (btnHeight[i].isEnabled()){
+			if (btnHeight[i].isSelected()){
 				height = btnHeight[i].getActionCommand();
 			}
 		}
@@ -122,7 +123,7 @@ public class IdealWeight extends JFrame implements ActionListener {
 		heightGroup.add(btnHeight[3]);
 		heightGroup.add(btnHeight[4]);
 
-		heightBox.add(new JLabel("Your btnHeight"));
+		heightBox.add(new JLabel("Your Height"));
 		heightBox.add(Box.createRigidArea(new Dimension(1, 8)));
 		heightBox.add(btnHeight[0]);
 		heightBox.add(btnHeight[1]);
@@ -160,7 +161,7 @@ public class IdealWeight extends JFrame implements ActionListener {
 		add(resultPanel);
 		
 		/**
-		 * run Calculation of ideal Weight initialy
+		 * run Calculation of ideal Weight initially
 		 */
 		calculateIW(gender,height);
 
@@ -177,7 +178,7 @@ public class IdealWeight extends JFrame implements ActionListener {
 	private void calculateIW(String g, String h) {
 //		resultText.setText("works");
 		int div=0;
-		int lbs=0;
+		double lbs=0;
 		int hgt=0;
 		
 		div = (g.equals("F")) ? 30 : 28;
@@ -202,9 +203,11 @@ public class IdealWeight extends JFrame implements ActionListener {
 				hgt = 60;
 		}
 		
-		lbs = hgt*hgt / div;
+		lbs = (double)hgt*(double)hgt / (double)div;
 		
-		resultText.setText(lbs+"lbs");
+		DecimalFormat df = new DecimalFormat("#,##0.0#");
+		
+		resultText.setText( df.format(lbs)+"lbs");
 			
 	}
 
@@ -216,13 +219,24 @@ public class IdealWeight extends JFrame implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		if(arg0.getActionCommand().matches("[MF]")){
-			gender = arg0.getActionCommand();
+		char evt = arg0.getActionCommand().charAt(0);
+		
+		switch (evt){
+			case 'M': 
+			case 'F':
+				gender = arg0.getActionCommand();
+				break;
+			case 'A':
+			case 'B':
+			case 'C':
+			case 'D':
+			case 'E':
+				height = arg0.getActionCommand();
+				break;
 		}
-		if(arg0.getActionCommand().matches("ABCDE")){
-			height = arg0.getActionCommand();
-		}
+		
 		calculateIW(gender, height);
+		repaint();
 
 	}
 
