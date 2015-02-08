@@ -3,14 +3,15 @@
  */
 package bmi;
 
-import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -38,18 +39,16 @@ public class IdealWeight extends JFrame implements ActionListener {
 
 	}
 
-	private JRadioButton genderM;
-	private JRadioButton genderF;
+	private JRadioButton[] btnGender = new JRadioButton[2];
 	private ButtonGroup genderGroup;
 	private Box genderBox;
-	private JRadioButton heightA;
-	private JRadioButton heightB;
-	private JRadioButton heightC;
-	private JRadioButton heightD;
-	private JRadioButton heightE;
+	private JRadioButton[] btnHeight = new JRadioButton[5];
 	private ButtonGroup heightGroup;
 	private Box heightBox;
 	private JTextField resultText;
+	
+	private String gender;
+	private String height;
 
 	private JPanel resultPanel;
 	private Box btnBox;
@@ -62,46 +61,75 @@ public class IdealWeight extends JFrame implements ActionListener {
 		/**
 		 * Gender Group
 		 */
-		genderM = new JRadioButton("Male", true);
-		genderF = new JRadioButton("Female", false);
+		btnGender[0] = new JRadioButton("Male", true);
+		btnGender[1] = new JRadioButton("Female", false);
+		
+		btnGender[0].setActionCommand("M");
+		btnGender[0].addActionListener(this);
+		
+		btnGender[1].setActionCommand("F");
+		btnGender[1].addActionListener(this);
+		
+		for (int i = 0; i < btnGender.length;i++){
+			if (btnGender[i].isSelected())
+				gender = btnGender[i].getActionCommand();
+		}
 
 		genderGroup = new ButtonGroup();
-		genderGroup.add(genderM);
-		genderGroup.add(genderF);
+		genderGroup.add(btnGender[0]);
+		genderGroup.add(btnGender[1]);
 
 		genderBox = new Box(BoxLayout.Y_AXIS);
 
-		genderBox.add(new JLabel("Your gender"));
+		genderBox.add(new JLabel("Your Gender"));
 		genderBox.add(Box.createRigidArea(new Dimension(1, 8)));
-		genderBox.add(genderM);
-		genderBox.add(genderF);
+		genderBox.add(btnGender[0]);
+		genderBox.add(btnGender[1]);
 		genderBox.add(Box.createRigidArea(new Dimension(1, 70)));
 
 		/**
 		 * Height Group
 		 */
-		heightA = new JRadioButton("60 to 64 inches", true);
-		heightB = new JRadioButton("64 to 68 inches", false);
-		heightC = new JRadioButton("68 to 72 inches", false);
-		heightD = new JRadioButton("72 to 76 inches", false);
-		heightE = new JRadioButton("76 to 80 inches", false);
+		btnHeight[0] = new JRadioButton("60 to 64 inches", true);
+		btnHeight[1] = new JRadioButton("64 to 68 inches", false);
+		btnHeight[2] = new JRadioButton("68 to 72 inches", false);
+		btnHeight[3] = new JRadioButton("72 to 76 inches", false);
+		btnHeight[4] = new JRadioButton("76 to 80 inches", false);
+		
+		for (int i = 0; i < btnHeight.length; i++){
+			if (btnHeight[i].isSelected()){
+				height = btnHeight[i].getActionCommand();
+			}
+		}
+		
+		btnHeight[0].setActionCommand("A");
+		btnHeight[0].addActionListener(this);
+		btnHeight[1].setActionCommand("B");
+		btnHeight[1].addActionListener(this);
+		btnHeight[2].setActionCommand("C");
+		btnHeight[2].addActionListener(this);
+		btnHeight[3].setActionCommand("D");
+		btnHeight[3].addActionListener(this);
+		btnHeight[4].setActionCommand("E");
+		btnHeight[4].addActionListener(this);
+		
 
 		heightGroup = new ButtonGroup();
 		heightBox = new Box(BoxLayout.Y_AXIS);
 
-		heightGroup.add(heightA);
-		heightGroup.add(heightB);
-		heightGroup.add(heightC);
-		heightGroup.add(heightD);
-		heightGroup.add(heightE);
+		heightGroup.add(btnHeight[0]);
+		heightGroup.add(btnHeight[1]);
+		heightGroup.add(btnHeight[2]);
+		heightGroup.add(btnHeight[3]);
+		heightGroup.add(btnHeight[4]);
 
-		heightBox.add(new JLabel("Your height"));
+		heightBox.add(new JLabel("Your Height"));
 		heightBox.add(Box.createRigidArea(new Dimension(1, 8)));
-		heightBox.add(heightA);
-		heightBox.add(heightB);
-		heightBox.add(heightC);
-		heightBox.add(heightD);
-		heightBox.add(heightE);
+		heightBox.add(btnHeight[0]);
+		heightBox.add(btnHeight[1]);
+		heightBox.add(btnHeight[2]);
+		heightBox.add(btnHeight[3]);
+		heightBox.add(btnHeight[4]);
 
 		/*
 		 * Button Box
@@ -131,6 +159,11 @@ public class IdealWeight extends JFrame implements ActionListener {
 		add(Box.createRigidArea(new Dimension(1,3)));
 		add(btnBox);
 		add(resultPanel);
+		
+		/**
+		 * run Calculation of ideal Weight initially
+		 */
+		calculateIW(gender,height);
 
 		/*
 		 * Add panels to content pane
@@ -142,6 +175,42 @@ public class IdealWeight extends JFrame implements ActionListener {
 		 */
 	}
 
+	private void calculateIW(String g, String h) {
+//		resultText.setText("works");
+		int div=0;
+		double lbs=0;
+		int hgt=0;
+		
+		div = (g.equals("F")) ? 30 : 28;
+		
+		switch (h.charAt(0)) {
+			case 'A': 
+				hgt = 64;
+				break;
+			case 'B':
+				hgt = 68;
+				break;
+			case 'C':
+				hgt = 72;
+				break;
+			case 'D':
+				hgt = 76;
+				break;
+			case 'E':
+				hgt = 80;
+				break;
+			default:
+				hgt = 60;
+		}
+		
+		lbs = (double)hgt*(double)hgt / (double)div;
+		
+		DecimalFormat df = new DecimalFormat("#,##0.0#");
+		
+		resultText.setText( df.format(lbs)+"lbs");
+			
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -150,7 +219,24 @@ public class IdealWeight extends JFrame implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+		char evt = arg0.getActionCommand().charAt(0);
+		
+		switch (evt){
+			case 'M': 
+			case 'F':
+				gender = arg0.getActionCommand();
+				break;
+			case 'A':
+			case 'B':
+			case 'C':
+			case 'D':
+			case 'E':
+				height = arg0.getActionCommand();
+				break;
+		}
+		
+		calculateIW(gender, height);
+		repaint();
 
 	}
 
