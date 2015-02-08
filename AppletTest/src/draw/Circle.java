@@ -3,6 +3,8 @@
  */
 package draw;
 
+import java.awt.Graphics;
+
 /**
  * @author frank
  *
@@ -29,6 +31,14 @@ public class Circle {
 		this.y = y;
 	}
 
+	/**
+	 * @param gr 
+	 */
+	public void draw(Graphics gr){
+		int ulX = this.getX()-this.getRadius();
+		int ulY = this.getY()-this.getRadius();
+		gr.drawOval(ulX, ulY, this.getRadius()*2, this.getRadius()*2);
+	}
 	/**
 	 * @return the x
 	 */
