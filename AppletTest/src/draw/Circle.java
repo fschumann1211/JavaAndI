@@ -66,6 +66,15 @@ public class Circle {
 	public void setY(int y) {
 		this.y = y;
 	}
+	
+	/**
+	 * @param newX
+	 * @param newY
+	 */
+	public void setPosition(int newX, int newY){
+		this.x = newX;
+		this.y = newY;
+	}
 
 	/**
 	 * @return the radius
