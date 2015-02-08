@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -37,10 +38,10 @@ public class IdealWeight extends JFrame implements ActionListener {
 
 	}
 
-	private JRadioButton[] btnGender;
+	private JRadioButton[] btnGender = new JRadioButton[2];
 	private ButtonGroup genderGroup;
 	private Box genderBox;
-	private JRadioButton[] btnHeight;
+	private JRadioButton[] btnHeight = new JRadioButton[5];
 	private ButtonGroup heightGroup;
 	private Box heightBox;
 	private JTextField resultText;
@@ -174,8 +175,37 @@ public class IdealWeight extends JFrame implements ActionListener {
 	}
 
 	private void calculateIW(String g, String h) {
-		// TODO Auto-generated method stub
+//		resultText.setText("works");
+		int div=0;
+		int lbs=0;
+		int hgt=0;
 		
+		div = (g.equals("F")) ? 30 : 28;
+		
+		switch (h.charAt(0)) {
+			case 'A': 
+				hgt = 64;
+				break;
+			case 'B':
+				hgt = 68;
+				break;
+			case 'C':
+				hgt = 72;
+				break;
+			case 'D':
+				hgt = 76;
+				break;
+			case 'E':
+				hgt = 80;
+				break;
+			default:
+				hgt = 60;
+		}
+		
+		lbs = hgt*hgt / div;
+		
+		resultText.setText(lbs+"lbs");
+			
 	}
 
 	/*
@@ -186,7 +216,13 @@ public class IdealWeight extends JFrame implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+		if(arg0.getActionCommand().matches("[MF]")){
+			gender = arg0.getActionCommand();
+		}
+		if(arg0.getActionCommand().matches("ABCDE")){
+			height = arg0.getActionCommand();
+		}
+		calculateIW(gender, height);
 
 	}
 
