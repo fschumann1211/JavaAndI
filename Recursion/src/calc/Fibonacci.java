@@ -2,8 +2,11 @@ package calc;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -11,7 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-public class Fibonacci extends JFrame {
+public class Fibonacci extends JFrame implements ActionListener{
 
 	/**
 	 * 
@@ -50,6 +53,52 @@ public class Fibonacci extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		
+		uiBox = new Box(BoxLayout.Y_AXIS);
+		getContentPane().add(uiBox, BorderLayout.CENTER);
+		
+		inJPanel = new JPanel();
+		inJLabel = new JLabel("Enter a positive Integer");
+		inField  = new JTextField(7);
+		
+		inJPanel.add(inJLabel);
+		inJPanel.add(inField);
+		uiBox.add(inJPanel);
+		
+		outJPanel = new JPanel();
+		outJLabel = new JLabel("Fibonacci Number");
+		outField  = new JTextField(10);
+		
+		outField.setEditable(false);
+		
+		outJPanel.add(outJLabel);
+		outJPanel.add(outField);
+		uiBox.add(outJPanel);
+		
+		doJButton = new JButton("Calculate");
+		doJButton.addActionListener(this);
+		add(doJButton, BorderLayout.SOUTH);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		String userIn = inField.getText();
+		
+		try {
+			outField.setText(String.valueOf(fib(Integer.parseInt(userIn))));;
+		} catch (Exception ex) {
+			outField.setText("NoINT");
+		}
+		
+	}
+
+	private int fib(int parseInt) {
+		if (parseInt == 1)
+			return 1;
+		else if (parseInt == 2)
+			return 1;
+		else
+			return fib(parseInt-2) + fib(parseInt-1);
 	}
 
 }
