@@ -80,8 +80,21 @@ public class Factorial extends JFrame implements ActionListener{
 	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+		String userIn = inText.getText();
+		try {
+			outText.setText(String.valueOf(
+					calculateFac(Integer.parseInt(userIn))));
+		} catch (Exception ex){
+			outText.setText("NoINT");
+		}
 		
 	}
 
+	private int calculateFac(int parseInt) {
+		if (parseInt == 0){
+			return 1;
+		} else {
+			return parseInt * calculateFac(parseInt-1);
+		}
+	}
 }
