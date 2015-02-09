@@ -1,3 +1,4 @@
+package calc;
 class TriangleCalc
 {
   int Triangle( int N )
