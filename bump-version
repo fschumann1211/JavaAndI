@@ -1,15 +1,15 @@
-#!/bin/bash
+#!/bin/sh
 
 usage(){
 	echo "usage: $0 <version-id>"
 }
 
-if [ $# -ne 1 ]; then
+if [ $# -ne 1 ] ; then
 	usage
 	exit 1
 fi
 
-if ! sed 's/^\*   Version .*/\*   Version '$1'/g' README.md > .README.md.new then
+if ! sed 's/^\*   Version .*/\*   Version '$1'/g' README.md > .README.md.new ; then
 	echo "Unable to change version." >&2
 	exit 2
 fi

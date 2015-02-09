@@ -4,7 +4,7 @@
 
 *   Training Java Programming Language
 *   Author: [Frank Schumann](mailto:fjahn78@gmail.com?subject=[Java Tutorial]%20)
-*   Version v0.66.1
+*   Version 0.67.0
 
 ## Contribution guidelines
 
