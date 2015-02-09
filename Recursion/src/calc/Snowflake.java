@@ -2,6 +2,7 @@ package calc;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Random;
 
 import javax.swing.JApplet;
 
@@ -20,14 +21,23 @@ public class Snowflake extends JApplet {
 		graph = gr;
 		int width = getWidth();
 		int height = getHeight();
-		int min = (height > width)?width:height;
+//		int min = (height > width)?width:height;
+		int x, y, size;
+		
+		Random rand = new Random();
 		
 		gr.setColor(Color.white);
 		gr.fillRect(0, 0, width-1, height-1);
 		gr.setColor(Color.blue);
 		
-		drawStar(width/2,height/2,min/3);
-
+		for (int ii = 0; ii < 250; ii++){
+			x = rand.nextInt(width);
+			y = rand.nextInt(height);
+			size = rand.nextInt(30);
+			
+			drawStar(x,y,size);
+			
+		}
 	}
 
 	private void drawStar(int x, int y, int size) {
