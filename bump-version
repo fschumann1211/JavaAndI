@@ -1,7 +1,7 @@
 #!/bin/sh
 
 usage(){
-	echo "usage: $0 <version-id>"
+	echo "\n		usage: $0 <version-id>\n"
 }
 
 if [ $# -ne 1 ] ; then
